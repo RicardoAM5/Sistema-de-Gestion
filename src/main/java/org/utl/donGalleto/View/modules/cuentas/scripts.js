@@ -23,7 +23,7 @@ graficoGalletas = new Chart(ctx, {
         }
     }
 });
-graficoInventario = new Chart(ctx, {
+graficoInventario = new Chart(ctx2, {
     type: 'bar',
     data: {
         labels: ['Chispas de chocolate', 'Orejas', 'Orejas con chocolate', 'Nuez', 'Arandanos', 'Polvorones de naranja'],
@@ -61,8 +61,8 @@ $(document).ready(function () {
                 resp.forEach(function(item) {
                     nombres.push(item.nombreGalleta);
                     valores.push(item.cantidadVendida);
-                    render_grafico_venta(nombres, valores);
                 });
+                render_grafico_venta(nombres, valores);
             },
             error: function(error) {
                 console.error(error);
@@ -99,7 +99,7 @@ function render_grafico_venta(nombres, valores){
 
 function render_grafico_inventario(nombres, valores){
     graficoInventario.destroy();
-    const ctx = document.getElementById('grafico_inventario');
+    const ctx2 = document.getElementById('grafico_inventario');
     graficoInventario = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -137,8 +137,8 @@ $(document).ready(function () {
             resp.forEach(function(item) {
                 nombres.push(item.nombre);
                 valores.push(item.cantidad);
-                render_grafico_inventario(nombres, valores);
             });
+            render_grafico_inventario(nombres, valores);
         },
         error: function(error) {
             console.error(error);
