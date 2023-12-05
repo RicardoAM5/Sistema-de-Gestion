@@ -23,8 +23,6 @@ graficoGalletas = new Chart(ctx, {
 });
 
 $(document).ready(function () {
-    var nombres = [];
-    var valores = [];
     $('.btn-check').on('change', function () {
         var filtro = $('input[name="filters"]:checked').val();
         console.log('Valor seleccionado:', filtro);
@@ -35,6 +33,8 @@ $(document).ready(function () {
             data:{"filtro": filtro},
             success : function(resp) {
                 console.log(resp);
+                var nombres = [];
+                var valores = [];
                 resp.forEach(function(item) {
                     nombres.push(item.nombreGalleta);
                     valores.push(item.cantidadVendida);
@@ -73,3 +73,7 @@ function render_grafico(nombres, valores){
         }
     });
 }
+
+$(document).ready(function () {
+    $('#mes').click();
+});
