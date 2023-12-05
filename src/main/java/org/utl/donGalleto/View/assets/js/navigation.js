@@ -41,7 +41,7 @@ window.cargarModuloMateriales = function cargarModuloMateriales() {
 }
 window.cargarModuloCuentas = function cargarModuloCuentas() {
   // Realizar la petición fetch para obtener el HTML de la página
-  fetch("./modules/cuentas/cuentas.html")
+  fetch("modules/cuentas/cuentas.html")
     .then((response) => response.text())
     .then((data) => {
       // Insertar el HTML en el contenedor principal
@@ -58,6 +58,15 @@ window.cargarModuloCuentas = function cargarModuloCuentas() {
         nuevoEnlace.href = enlace.href;
         document.head.appendChild(nuevoEnlace);
       });
+      fetch("modules/cuentas/scripts.js")
+      .then((response) => response.text())
+      .then((data) => {
+        const script = document.createElement("script");
+        script.type= "module";
+        script.textContent = data;
+        document.body.appendChild(script);
+      })
+      .catch((error) => console.error("Error al cargar el script:", error));
     })
     .catch((error) => console.error("Error al cargar la página:", error));
 }
