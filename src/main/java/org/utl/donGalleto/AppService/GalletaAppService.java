@@ -21,7 +21,7 @@ public class GalletaAppService {
     }
 
     public void insertarGalleta(Galleta g) throws Exception {
-        galletaCQRS.insertarGalleta(g);
+        galletaDAO.insertarGalleta(g);
     }
 
     public void actualizarGalleta(Galleta g) throws Exception {

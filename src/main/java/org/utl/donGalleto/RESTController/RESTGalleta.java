@@ -24,7 +24,7 @@ public class RESTGalleta {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<?> insertarGalleta(Galleta g) {
+    public ResponseEntity<?> insertarGalleta(@RequestBody Galleta g) {
         try {
             galletaAppService.insertarGalleta(g);
             return ResponseEntity.ok(g);
@@ -83,7 +83,7 @@ public class RESTGalleta {
         }
     }
     @PutMapping("/update")
-    public ResponseEntity<?> actualizarGalleta(Galleta g) {
+    public ResponseEntity<?> actualizarGalleta( @RequestBody Galleta g) {
         try {
             galletaAppService.actualizarGalleta(g);
             return ResponseEntity.ok(g);
