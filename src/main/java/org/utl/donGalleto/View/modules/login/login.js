@@ -68,7 +68,7 @@ export function iniciarSesion() {
         const token = data.token;
         localStorage.setItem("token", token);
 
-        window.location.href = "/index.html";
+        window.location.href = "../../index.html";
       }
       // Puedes redirigir a la página principal (index.html) o realizar otras acciones necesarias
     })
