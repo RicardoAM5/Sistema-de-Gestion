@@ -1,6 +1,6 @@
 <br>
 <div class="container d-flex align-items-center justify-content-center">
-    <h3 class="text-center">Estas son tus ventas por unidades filtrados por:</h3>
+    <h3 class="text-center">Este gráfico representa las galletas que haz vendido:</h3>
 </div>
 <br>
 <div class="container-fluid px-5 col-5">
@@ -28,7 +28,7 @@
 <br>
 <br>
 <div class="container d-flex align-items-center justify-content-center">
-    <h3 class="text-center">Este es el inventario de tus galletas:</h3>
+    <h3 class="text-center">Este gráfico representa el inventario de galletas:</h3>
 </div>
 <br>
 <div class="container">
@@ -39,36 +39,28 @@
     </div>
 </div>
 <br>
-<div class="row h-100">
-    <!-- Columna izquierda (tamaño 7 en pantallas grandes) -->
-    <div class="col-md-12 col-sm-12">
-        <!-- Contenido de la columna izquierda -->
-        <div class="" style="
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: space-between;
-                      align-items: center;
-                    ">
-            <p></p>
-            <h3>Desglose de ventas</h3>
+<div class="container-fluid h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <!-- Columna izquierda (tamaño 12 en pantallas grandes) -->
+        <div class="col-md-12 col-sm-12 col-lg-7">
+            <!-- Contenido centrado en el 80% de la pantalla -->
+            <div class="text-center mb-4">
+                <h3>Desglose de ventas</h3>
+            </div>
+            <div class="mb-4 mt-2" style="height: calc(100vh - 150px); overflow: auto; border: 2px solid var(--color2);">
+                <!-- Aquí va la tabla del ticket -->
+                <table id="dataTable_ventas" class="table">
+                    <thead>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Total</th>
+                        <th>Fecha</th>
+                    </thead>
+                    <tbody id="tableBody_ventas_reporte"></tbody>
+                </table>
+            </div>
         </div>
-        <div class="mb-4 mt-2" style="
-              height: calc(100vh - 150px);
-          overflow: auto;
-          border: 2px solid var(--color2);
-        ">
-            <!-- aqui va la tabla del ticket-->
-
-            <table id="dataTable_ventas" class="table">
-                <thead>
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Cantidad</th>
-                </thead>
-                <tbody id="tableBody_ventas_reporte"></tbody>
-            </table>
-        </div>
-
     </div>
-
 </div>
