@@ -100,7 +100,7 @@ function render_grafico_venta(nombres, valores){
 function render_grafico_inventario(nombres, valores){
     graficoInventario.destroy();
     const ctx2 = document.getElementById('grafico_inventario');
-    graficoInventario = new Chart(ctx, {
+    graficoInventario = new Chart(ctx2, {
         type: 'bar',
         data: {
             labels: nombres,
