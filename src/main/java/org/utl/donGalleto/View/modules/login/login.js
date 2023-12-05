@@ -15,11 +15,6 @@ import { login } from "../apiUrls.js";
           iniciarSesion();
         }
 
-        //logica temporal de login solo para pruebas 
-        localStorage.setItem("token", "token");
-        window.location.href = "/index.html";
-        //borrar cuando ya este bien todo
-
         form.classList.add("was-validated");
       },
       false
@@ -33,13 +28,14 @@ export function iniciarSesion() {
   const user = document.getElementById("user");
   const password = document.getElementById("password");
 
+  const apiRoute = login + "usuario=" + nombre + "&contrasenia=" + contrasenia;
+
   // Realizar la solicitud de inicio de sesión mediante fetch
-  fetch(login, {
-    method: "POST",
+  fetch(apiRoute, {
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ nombre, contrasenia }),
   })
     .then((response) => {
       if (!response.ok) {
@@ -55,17 +51,25 @@ export function iniciarSesion() {
     })
     .then((data) => {
       // Si la respuesta es exitosa, redirige al index u otra página
-      console.log("Inicio de sesión exitoso:", data);
 
-      if (!data.token) {
-        data.token = "jdhjdakjdakjdakjd";
+      if (data.error) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: data.error,
+        });
+      } else {
+        console.log("Inicio de sesión exitoso:", data);
+
+        if (!data.token) {
+          data.token = "jdhjdakjdakjdakjd";
+        }
+
+        const token = data.token;
+        localStorage.setItem("token", token);
+
+        window.location.href = "/index.html";
       }
-
-      const token = data.token;
-      localStorage.setItem("token", token);
-
-      window.location.href = "/index.html";
-
       // Puedes redirigir a la página principal (index.html) o realizar otras acciones necesarias
     })
     .catch((error) => {

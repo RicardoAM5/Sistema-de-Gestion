@@ -7,4 +7,4 @@ export const galletasUpdateApiUrl = 'http://localhost:8080/api/galleta/update';
 export const inventarioApiUrl = 'http://localhost:8080/api/inventario/getAll';
 export const inventarioUpdateApiUrl = 'http://localhost:8080/api/inventario/updateInventario?';
 //falta crear
-export const login = '';
+export const login = 'http://localhost:8080/api/usuario/login?';
