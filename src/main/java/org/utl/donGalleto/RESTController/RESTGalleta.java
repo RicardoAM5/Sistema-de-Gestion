@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.utl.donGalleto.AppService.GalletaAppService;
 import org.utl.donGalleto.Model.Galleta;
-import org.utl.donGalleto.Model.GalletaNombreCantidad;
+import org.utl.donGalleto.Model.Inventario;
 
 import java.util.HashMap;
 import java.util.List;
@@ -87,35 +87,6 @@ public class RESTGalleta {
         try {
             galletaAppService.actualizarGalleta(g);
             return ResponseEntity.ok(g);
-        } catch (Exception e) {
-            String errorMessage = e.getMessage();
-            Map<String, String> errorResponse = new HashMap<>();
-            errorResponse.put("error", errorMessage);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
-        }
-    }
-
-    //Se utiliza para el modulo de inventario
-    @GetMapping("/getNombre&Cantidad")
-    public ResponseEntity<?> obtenerNombreYCantidad() {
-        try {
-            List<GalletaNombreCantidad> galletas = galletaAppService.obtenerNombreYCantidad();
-            return ResponseEntity.ok(galletas);
-        } catch (Exception e) {
-            String errorMessage = e.getMessage();
-            Map<String, String> errorResponse = new HashMap<>();
-            errorResponse.put("error", errorMessage);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
-        }
-    }
-
-    @PutMapping("/updateCantidadGalleta")
-    public ResponseEntity<?> actualizarCantidadGalleta(String nombre, String cantidad) {
-        try {
-            Map<String, String> response = new HashMap<>();
-            response.put("correcto", "datos actualizados");
-            galletaAppService.actualizarCantidadGalleta(nombre,cantidad);
-            return ResponseEntity.ok(response);
         } catch (Exception e) {
             String errorMessage = e.getMessage();
             Map<String, String> errorResponse = new HashMap<>();

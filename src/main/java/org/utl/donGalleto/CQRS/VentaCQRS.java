@@ -18,18 +18,14 @@ public class VentaCQRS {
 
     public Venta insertarVenta(Venta v) throws Exception{
         List<String> camposVacios = new ArrayList<>();
-        if(v.getCantidad() == null || v.getCantidad().isEmpty()){
-            camposVacios.add("cantidad");
-        }
+
         if(v.getFecha() == null ){
             camposVacios.add("fecha");
         }
         if(v.getTotal() == null || v.getTotal().isEmpty()){
             camposVacios.add("total");
         }
-        if(v.getCantidad().isEmpty()){
-            camposVacios.add("galleta");
-        }
+
          if (!camposVacios.isEmpty()) {
             String emptyMessage = "Estos campos no pueden estar vacios " + String.join(", ", camposVacios);
             throw new Exception(emptyMessage);
@@ -40,18 +36,14 @@ public class VentaCQRS {
     }
     public Venta actualizarVenta(Venta v) throws Exception{
         List<String> camposVacios = new ArrayList<>();
-        if(v.getCantidad() == null || v.getCantidad().isEmpty()){
-            camposVacios.add("cantidad");
-        }
+
         if(v.getFecha() == null ){
             camposVacios.add("fecha");
         }
         if(v.getTotal() == null || v.getTotal().isEmpty()){
             camposVacios.add("total");
         }
-        if(v.getCantidad().isEmpty()){
-            camposVacios.add("galleta");
-        }
+
         if (!camposVacios.isEmpty()) {
             String emptyMessage = "Estos campos no pueden estar vacios " + String.join(", ", camposVacios);
             throw new Exception(emptyMessage);

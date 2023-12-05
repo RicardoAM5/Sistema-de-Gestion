@@ -1,22 +1,21 @@
 package org.utl.donGalleto.CQRS;
 
 import org.springframework.stereotype.Service;
-import org.utl.donGalleto.DAO.InventarioDAO;
-import org.utl.donGalleto.Model.Inventario;
+import org.utl.donGalleto.DAO.CrudDAO;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class InventarioCQRS {
+public class CrudCQRS {
 
-    private final InventarioDAO inventarioDAO;
+    private final CrudDAO inventarioDAO;
 
-    public InventarioCQRS(InventarioDAO inventarioDAO) {
+    public CrudCQRS(CrudDAO inventarioDAO) {
         this.inventarioDAO = inventarioDAO;
     }
 
-    public Inventario insertarInventario(Inventario i) throws Exception{
+    public org.utl.donGalleto.Model.Crud insertarInventario(org.utl.donGalleto.Model.Crud i) throws Exception{
         List<String> camposVacios = new ArrayList<>();
 
         if(i.getCantidad() == null || i.getCantidad().isEmpty() ){
@@ -29,7 +28,7 @@ public class InventarioCQRS {
         inventarioDAO.insertarInventario(i);
         return i;
     }
-    public Inventario actualizarInventario(Inventario i) throws Exception{
+    public org.utl.donGalleto.Model.Crud actualizarInventario(org.utl.donGalleto.Model.Crud i) throws Exception{
         List<String> camposVacios = new ArrayList<>();
 
         if(i.getCantidad() == null || i.getCantidad().isEmpty() ){

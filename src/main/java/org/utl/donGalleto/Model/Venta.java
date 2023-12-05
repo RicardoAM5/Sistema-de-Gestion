@@ -14,7 +14,7 @@ public class Venta {
     private long idVenta;
 
     @Column(name = "cantidad")
-    String cantidad;
+    float cantidad;
 
     @Column(name = "total")
     String total;
@@ -29,7 +29,7 @@ public class Venta {
     public Venta() {
     }
 
-    public Venta(long idVenta, String cantidad, String total, Date fecha, long idGalleta) {
+    public Venta(long idVenta, float cantidad, String total, Date fecha, long idGalleta) {
         this.idVenta = idVenta;
         this.cantidad = cantidad;
         this.total = total;
@@ -37,7 +37,7 @@ public class Venta {
         this.idGalleta = idGalleta;
     }
 
-    public Venta(String cantidad, String total, Date fecha, long idGalleta) {
+    public Venta(float cantidad, String total, Date fecha, long idGalleta) {
         this.cantidad = cantidad;
         this.total = total;
         this.fecha = fecha;
@@ -60,11 +60,11 @@ public class Venta {
         this.idVenta = idVenta;
     }
 
-    public String getCantidad() {
+    public float getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(String cantidad) {
+    public void setCantidad(float cantidad) {
         this.cantidad = cantidad;
     }
 

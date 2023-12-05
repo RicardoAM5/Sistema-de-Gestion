@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import org.utl.donGalleto.CQRS.GalletaCQRS;
 import org.utl.donGalleto.DAO.GalletaDAO;
 import org.utl.donGalleto.Model.Galleta;
-import org.utl.donGalleto.Model.GalletaNombreCantidad;
+import org.utl.donGalleto.Model.Inventario;
 
 import java.util.List;
 import java.util.Optional;
@@ -45,11 +45,7 @@ public class GalletaAppService {
     }
 
 
-    public List<GalletaNombreCantidad> obtenerNombreYCantidad() throws Exception {
-        return galletaDAO.obtenerNombreYCantidad();
-    }
 
-    public String actualizarCantidadGalleta (String nombre, String cantidad) throws Exception {
-        return galletaDAO.actualizarCantidadGalleta(nombre,cantidad);
-    }
+
+
 }
