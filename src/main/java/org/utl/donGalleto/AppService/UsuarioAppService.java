@@ -30,8 +30,10 @@ public class UsuarioAppService {
     public List<Usuario> getAllUsuario() {
         return usuarioDAO.getAllUsuario();
     }
-    public Optional<Usuario> buscarUsuario(long idUsuario) {
-        return usuarioDAO.buscarUsuario(idUsuario);
+
+
+    public Usuario buscarUsuario(String usuario, String contrasenia) throws Exception {
+        return usuarioDAO.buscarUsuario(usuario,contrasenia);
     }
 
     public void eliminarUsuario(long idUsuario) throws Exception{

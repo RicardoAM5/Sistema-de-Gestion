@@ -50,17 +50,10 @@ public class RESTUsuario {
     }
 
     @GetMapping("/login")
-    public ResponseEntity<?> buscarUsuario(long idUsuario) {
+    public ResponseEntity<?> buscarUsuario(String usuario, String contrasenia) throws Exception {
         try {
-            Optional<Usuario> u = usuarioAppService.buscarUsuario(idUsuario);
-            if (u.isPresent()) {
-                Usuario usr = u.get();
-                return ResponseEntity.ok(usr);
-            } else {
-                Map<String, String> errorResponse = new HashMap<>();
-                errorResponse.put("error", "Usuario o contrasenia incorrecta");
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
-            }
+           Usuario usr = usuarioAppService.buscarUsuario(usuario, contrasenia);
+            return ResponseEntity.ok(usr) ;
         } catch (Exception e) {
             String errorMessage = e.getMessage();
             Map<String, String> errorResponse = new HashMap<>();
@@ -68,6 +61,9 @@ public class RESTUsuario {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
         }
     }
+
+
+
 
     @DeleteMapping("/delete")
     public ResponseEntity<?> eliminarUsuario(long idUsuario) {
@@ -82,6 +78,7 @@ public class RESTUsuario {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
         }
     }
+
     @PutMapping("/update")
     public ResponseEntity<?> actualizarUsuario(Usuario u) {
         try {
