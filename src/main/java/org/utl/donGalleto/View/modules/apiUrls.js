@@ -1,4 +1,10 @@
-export const ventasApiUrl = 'https://ejemplo.com/api/ventas';
-export const galletasApiUrl = 'https://ejemplo.com/api/galletas';
-export const inventarioApiUrl = 'https://ejemplo.com/api/inventario';
-export const login = 'https://ejemplo.com/api/login';
+export const ventasApiUrl = 'http://localhost:8080/api/venta/getAll';
+export const ventasInsertApiUrl = 'http://localhost:8080/api/venta/save';
+export const galletasApiUrl = 'http://localhost:8080/api/galleta/getAll';
+export const galletasInsertApiUrl = 'http://localhost:8080/api/galleta/save';
+export const galletasDeleteApiUrl = 'http://localhost:8080/api/galleta/delete?idGalleta=';
+export const galletasUpdateApiUrl = 'http://localhost:8080/api/galleta/update';
+export const inventarioApiUrl = 'http://localhost:8080/api/inventario/getAll';
+export const inventarioUpdateApiUrl = 'http://localhost:8080/api/inventario/updateInventario?';
+//falta crear
+export const login = '';
