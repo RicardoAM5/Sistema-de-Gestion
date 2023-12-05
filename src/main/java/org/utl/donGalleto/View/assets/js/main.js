@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Verificar si el token está presente para determinar si se ha iniciado sesión
     if (!token) {
-		window.location.href = "/modules/login/login.html";
+		window.location.href = "./modules/login/login.html";
     }
 });
 
@@ -155,4 +155,10 @@ function cargarAnimacion(){
 		}
 	}); 
 }
+$(document).ready(function() {
+    $('.btn-check').on('change', function() {
+        var valorSeleccionado = $('input[name="filters"]:checked').val();
+        console.log('Valor seleccionado:', valorSeleccionado);
+    });
+  });
 
