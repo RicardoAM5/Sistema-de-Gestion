@@ -40,7 +40,7 @@ public class DashboardDAO {
 
     public List<Dashboard> ventasFecha(String filtro ) throws Exception {
         if (filtro.equals("dia")) {
-            try {
+            try {//test
                 String query = "SELECT g.nombre AS nombre_galleta, SUM(v.cantidad) AS cantidad_vendida\n" +
                         "FROM venta v\n" +
                         "JOIN galleta g ON v.id_galleta = g.id_galleta\n" +
