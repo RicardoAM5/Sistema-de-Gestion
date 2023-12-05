@@ -103,5 +103,5 @@ window.cargarModuloVentas = function cargarModuloVentas() {
 window.cerrarSesion = function cerrarSesion() {
   localStorage.clear();
 
-  window.location.href = "./modules/login/login.html";
+  window.location.href = "/modules/login/login.html";
 }
