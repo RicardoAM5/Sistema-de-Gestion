@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Don Galleto</title>
+    <link rel="icon" href="./resources/icon_2.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./libraries/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script type="module" src="./assets/js/navigation.js"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link href="./libraries/datatables.min.css" rel="stylesheet" />
+    <script src="
+    https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+    "></script>
+    <script src="./libraries/datatables.min.js"></script>
+
+    <script src="./libraries/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body style="background-color: black; height: 100vh">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid px-5">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggler"
+          aria-controls="navbarToggler"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a
+          class="navbar-brand animate__animated animate__rubberBand"
+          href="index.html"
+        >
+          <img
+            src="./resources/logo.png"
+            id="logo"
+            class="img-fluid"
+            alt="Logo"
+          />
+        </a>
+
+        <div class="collapse navbar-collapse ms-auto" id="navbarToggler">
+          <hr />
+          <div class="px-5"></div>
+          <div
+            class="btn-group navbar-nav"
+            style="width: 100%"
+            role="group"
+            aria-label="Menu de modulos"
+          >
+            <input
+              type="radio"
+              class="btn-check nav-item"
+              name="btnradio"
+              id="btnradioVenta"
+              autocomplete="off"
+              onclick="cargarModuloVentas()"
+            />
+            <label class="btn btn-outline-primary" for="btnradioVenta"
+              >Venta</label
+            >
+            <br />
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradioInventario"
+              autocomplete="off"
+              onclick="cargarModuloInventario()"
+            />
+            <label class="btn btn-outline-primary" for="btnradioInventario"
+              >Inventario</label
+            >
+            <br />
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradioGalletas"
+              autocomplete="off"
+              onclick="cargarModuloGalletas()"
+            />
+            <label class="btn btn-outline-primary" for="btnradioGalletas"
+              >Galletas</label
+            >
+            <br />
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradioRecetas"
+              autocomplete="off"
+              disabled
+            />
+            <label class="btn btn-outline-secondary" for="btnradioRecetas"
+              >Recetas</label
+            >
+            <br />
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradioMateriaPrima"
+              autocomplete="off"
+              onclick="cargarModuloMateriales()"
+              disabled
+            />
+            <label class="btn btn-outline-secondary" for="btnradioMateriaPrima"
+              >Materia Prima</label
+            >
+            <br />
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradioCuentas"
+              autocomplete="off"
+              onclick="cargarModuloCuentas()"
+            />
+            <label class="btn btn-outline-primary" for="btnradioCuentas"
+              >Cuentas</label
+            >
+          </div>
+          <hr />
+          <div class="px-3"></div>
+          <form class="d-flex" role="search">
+            <button
+                class="btn btn-secondary"
+                style="min-width: 120px"
+                type="button"
+                onclick="cerrarSesion()"
+              >
+                Cerrar sesión
+              </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div id="contenido"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./modules/cuentas/scripts.js"></script>
+    <script type="module" src="./modules/galletas/scripts.js"></script>
+    <script type="module" src="./modules/materiales/scripts.js"></script>
+    <script type="module" src="./modules/ventas/scripts.js"></script>
+  </body>
+</html>

@@ -22,6 +22,9 @@ public class GalletaCQRS {
         if (g.getNombre() == null || g.getNombre().isEmpty() ) {
             camposVacios.add("nombre");
         }
+        if (g.getCantidad() == null || g.getCantidad().isEmpty() ) {
+            camposVacios.add("cantidad");
+        }
         if (g.getPrecioUnitario() == null || g.getPrecioUnitario().isEmpty() ) {
             camposVacios.add("precioUnitario");
         }
@@ -47,6 +50,9 @@ public class GalletaCQRS {
 
         if (g.getNombre() == null || g.getNombre().isEmpty() ) {
             camposVacios.add("nombre");
+        }
+        if (g.getCantidad() == null || g.getCantidad().isEmpty() ) {
+            camposVacios.add("cantidad");
         }
         if (g.getPrecioUnitario() == null || g.getPrecioUnitario().isEmpty() ) {
             camposVacios.add("precioUnitario");

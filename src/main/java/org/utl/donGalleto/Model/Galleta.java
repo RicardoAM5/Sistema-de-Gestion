@@ -12,6 +12,10 @@ public class Galleta {
 
     @Column(name = "nombre")
     String nombre;
+
+    @Column(name = "cantidad")
+    String cantidad;
+
     @Column(name = "precio_unitario")
     String precioUnitario;
     @Column(name = "precio_kilo")
@@ -24,21 +28,36 @@ public class Galleta {
     public Galleta() {
     }
 
-    public Galleta(String nombre, String precioUnitario, String precioKilo, String imagenBase64, String descripcion) {
+    public Galleta(String nombre, String cantidad) {
         this.nombre = nombre;
+        this.cantidad = cantidad;
+    }
+
+    public Galleta(String nombre, String cantidad, String precioUnitario, String precioKilo, String imagenBase64, String descripcion) {
+        this.nombre = nombre;
+        this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
         this.precioKilo = precioKilo;
         this.imagenBase64 = imagenBase64;
         this.descripcion = descripcion;
     }
 
-    public Galleta(long idGalleta, String nombre, String precioUnitario, String precioKilo, String imagenBase64, String descripcion) {
+    public Galleta(long idGalleta, String nombre, String cantidad, String precioUnitario, String precioKilo, String imagenBase64, String descripcion) {
         this.idGalleta = idGalleta;
         this.nombre = nombre;
+        this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
         this.precioKilo = precioKilo;
         this.imagenBase64 = imagenBase64;
         this.descripcion = descripcion;
+    }
+
+    public String getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
 
     public long getIdGalleta() {
@@ -87,5 +106,18 @@ public class Galleta {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    @Override
+    public String toString() {
+        return "Galleta{" +
+                "idGalleta=" + idGalleta +
+                ", nombre='" + nombre + '\'' +
+                ", cantidad='" + cantidad + '\'' +
+                ", precioUnitario='" + precioUnitario + '\'' +
+                ", precioKilo='" + precioKilo + '\'' +
+                ", imagenBase64='" + imagenBase64 + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                '}';
     }
 }

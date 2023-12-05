@@ -2,6 +2,9 @@ package org.utl.donGalleto.Model;
 
 import jakarta.persistence.*;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 @Entity
 @Table(name = "venta")
 public class Venta {
@@ -16,28 +19,37 @@ public class Venta {
     @Column(name = "total")
     String total;
 
+    @Column(name = "fecha")
+    Date fecha;
+
+
     @Column(name = "id_galleta")
     long idGalleta;
 
     public Venta() {
     }
 
-    public Venta(String cantidad, String total, long idGalleta) {
-        this.cantidad = cantidad;
-        this.total = total;
-        this.idGalleta = idGalleta;
-    }
-
-    public Venta(long idVenta, String cantidad, String total, long idGalleta) {
+    public Venta(long idVenta, String cantidad, String total, Date fecha, long idGalleta) {
         this.idVenta = idVenta;
         this.cantidad = cantidad;
         this.total = total;
+        this.fecha = fecha;
         this.idGalleta = idGalleta;
     }
 
-    public Venta(String cantidad, String total) {
+    public Venta(String cantidad, String total, Date fecha, long idGalleta) {
         this.cantidad = cantidad;
         this.total = total;
+        this.fecha = fecha;
+        this.idGalleta = idGalleta;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     public long getIdVenta() {

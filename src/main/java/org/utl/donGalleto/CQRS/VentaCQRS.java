@@ -21,6 +21,9 @@ public class VentaCQRS {
         if(v.getCantidad() == null || v.getCantidad().isEmpty()){
             camposVacios.add("cantidad");
         }
+        if(v.getFecha() == null ){
+            camposVacios.add("fecha");
+        }
         if(v.getTotal() == null || v.getTotal().isEmpty()){
             camposVacios.add("total");
         }
@@ -39,6 +42,9 @@ public class VentaCQRS {
         List<String> camposVacios = new ArrayList<>();
         if(v.getCantidad() == null || v.getCantidad().isEmpty()){
             camposVacios.add("cantidad");
+        }
+        if(v.getFecha() == null ){
+            camposVacios.add("fecha");
         }
         if(v.getTotal() == null || v.getTotal().isEmpty()){
             camposVacios.add("total");

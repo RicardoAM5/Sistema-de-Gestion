@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.utl.donGalleto.CQRS.GalletaCQRS;
 import org.utl.donGalleto.DAO.GalletaDAO;
 import org.utl.donGalleto.Model.Galleta;
+import org.utl.donGalleto.Model.GalletaNombreCantidad;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,5 +42,14 @@ public class GalletaAppService {
         } catch (Exception e) {
             throw new Exception("No se encontro galleta con el id " + idGalleta);
         }
+    }
+
+
+    public List<GalletaNombreCantidad> obtenerNombreYCantidad() throws Exception {
+        return galletaDAO.obtenerNombreYCantidad();
+    }
+
+    public String actualizarCantidadGalleta (String nombre, String cantidad) throws Exception {
+        return galletaDAO.actualizarCantidadGalleta(nombre,cantidad);
     }
 }

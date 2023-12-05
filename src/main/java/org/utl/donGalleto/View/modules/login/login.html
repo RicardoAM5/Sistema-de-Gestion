@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="icon" href="../../resources/icon_2.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../../libraries/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./login.css" />
+    <script src="../../libraries/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div id="particles-js" style="overflow: hidden;">
+        <canvas class="particles-js-canvas-el"></canvas>
+      </div>
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center" style="height: 100vh;">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="form-container bg-secondary text-center animate__animated animate__zoomIn" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); border-radius: 20px;">
+            <form class="p-3 mt-3 needs-validation" novalidate id="withdrawForm">
+              <img src="../../resources/icon.png" id="logo" class="img-fluid" alt="Logo" />
+              <div class="mt-4" style="text-align: left; color: white;">
+                <h4>Usuario</h4>
+                <input
+                  type="text"
+                  name="user"
+                  class="form-field form-control"
+                  id="user"
+                  placeholder="Usuario"
+                  required
+                />
+                <div class="invalid-feedback">Ingrese usuario</div>
+              </div>
+              <div class="my-4" style="text-align: left; color:white">
+                <h4>Contraseña</h4>
+                <input
+                  type="password"
+                  name="password"
+                  class="form-field form-control"
+                  id="password"
+                  placeholder="Contraseña"
+                  required
+                />
+                <div class="invalid-feedback">Ingrese la contraseña</div>
+              </div>
+              <button class="btn btn-primary mt-3" style="color:white; width: 100%;" type="submit">Ingresar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script type="module" src="./login.js"></script>
+  </body>
+</html>
+

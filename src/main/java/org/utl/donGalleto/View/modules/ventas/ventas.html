@@ -1,0 +1,168 @@
+<div class="container-fluid" style="height: 100%">
+  <div class="row h-100">
+    <!-- Columna izquierda (tamaño 7 en pantallas grandes) -->
+    <div class="col-md-7 col-sm-12">
+      <!-- Contenido de la columna izquierda -->
+      <div
+        class="mb-4 mt-2"
+        style="
+          height: calc(100vh - 180px);
+          overflow: auto;
+          border: 2px solid var(--color2);
+        "
+      >
+        <!-- aqui va la tabla del ticket-->
+
+        <table id="dataTable_ventas" class="table">
+          <thead>
+            <th>#</th>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+          </thead>
+          <tbody id="tableBody_ventas"></tbody>
+        </table>
+      </div>
+      <div
+        class=""
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+        "
+      >
+        <button class="btn btn-primary" onclick="hola()">Imprimir nota</button>
+        <button class="btn btn-primary">Confirmar venta</button>
+      </div>
+    </div>
+    <div class="col-md-5 col-sm-12 p-2">
+      <div
+        class="p-4 pb-0 d-flex flex-column h-100"
+        style="
+          border: 2px solid var(--color2);
+          position: relative;
+          display: grid;
+        "
+      >
+        <div class="seleccion_galletas d-flex mb-4">
+          <input
+            type="text"
+            class="barra-busqueda form-control"
+            placeholder="Buscar galleta"
+            style="margin-right: 4px"
+          />
+          <button class="btn btn-primary">Buscar</button>
+        </div>
+        <div
+          id="lista_galletas"
+          class="row"
+          style="
+            height: calc(100vh - 210px);
+            border-radius: 5px;
+            border: 2px solid var(--color5);
+            overflow: auto;
+            overflow-y: scroll;
+          "
+        >
+          <!-- aqui va la lista de galletas dinamica -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- aqui van los formularios emergentes -->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="addProduct"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="agregarProductoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="agregarProductoModalLabel">
+          Agregar Producto
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="agregarProductoForm">
+          <label for="" class="">Tipo de Producto:</label>
+          <div class="my-3 text-center">
+            <input
+              type="radio"
+              class="btn-check"
+              name="options-base"
+              id="option5"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="option5">Precio</label>
+
+            <input
+              type="radio"
+              class="btn-check"
+              name="options-base"
+              id="option6"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="option6">Pieza</label>
+
+            <input
+              type="radio"
+              class="btn-check"
+              name="options-base"
+              id="option7"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="option7">Caja</label>
+
+            <input
+              type="radio"
+              class="btn-check"
+              name="options-base"
+              id="option8"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="option8">Peso</label>
+          </div>
+
+          <div class="mb-3">
+            <label for="cantidad" class="form-label">Cantidad:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="cantidad"
+              placeholder="Ingrese la cantidad"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="agregarProducto()"
+        >
+          Agregar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

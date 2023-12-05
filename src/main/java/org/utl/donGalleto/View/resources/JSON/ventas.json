@@ -1,0 +1,18 @@
+[
+    {"Id": 1, "Nombre": "Galletas de chocolate", "Precio": 2.5, "Cantidad": 3, "Total": 7.5},
+    {"Id": 2, "Nombre": "Galletas de avena", "Precio": 3, "Cantidad": 2, "Total": 6},
+    {"Id": 3, "Nombre": "Galletas de mantequilla", "Precio": 2, "Cantidad": 5, "Total": 10},
+    {"Id": 4, "Nombre": "Galletas de vainilla", "Precio": 2.8, "Cantidad": 4, "Total": 11.2},
+    {"Id": 5, "Nombre": "Galletas rellenas de crema", "Precio": 3.5, "Cantidad": 3, "Total": 10.5},
+    {"Id": 6, "Nombre": "Galletas integrales", "Precio": 3.2, "Cantidad": 2, "Total": 6.4},
+    {"Id": 7, "Nombre": "Galletas sin azúcar", "Precio": 2.7, "Cantidad": 4, "Total": 10.8},
+    {"Id": 8, "Nombre": "Galletas de avena y pasas", "Precio": 3.3, "Cantidad": 3, "Total": 9.9},
+    {"Id": 9, "Nombre": "Galletas de almendra", "Precio": 4, "Cantidad": 2, "Total": 8},
+    {"Id": 10, "Nombre": "Galletas de coco", "Precio": 2.5, "Cantidad": 5, "Total": 12.5},
+    {"Id": 11, "Nombre": "Galletas con chispas de caramelo", "Precio": 3.8, "Cantidad": 2, "Total": 7.6},
+    {"Id": 12, "Nombre": "Galletas de avena y nueces", "Precio": 3.5, "Cantidad": 3, "Total": 10.5},
+    {"Id": 13, "Nombre": "Galletas de jengibre", "Precio": 2.2, "Cantidad": 4, "Total": 8.8},
+    {"Id": 14, "Nombre": "Galletas de frutas secas", "Precio": 3.6, "Cantidad": 2, "Total": 7.2},
+    {"Id": 15, "Nombre": "Galletas de canela", "Precio": 2.9, "Cantidad": 3, "Total": 8.7}
+  ]
+  
