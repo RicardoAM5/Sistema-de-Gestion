@@ -8,18 +8,18 @@ import java.sql.Date;
 public class Dashboard {
 
     String nombreGalleta;
-    Date fecha;
     float cantidadVendida;
 
 
     public Dashboard() {
     }
 
-    public Dashboard(String nombreGalleta, Date fecha, float cantidadVendida) {
+    public Dashboard(String nombreGalleta, float cantidadVendida) {
         this.nombreGalleta = nombreGalleta;
-        this.fecha = fecha;
         this.cantidadVendida = cantidadVendida;
     }
+
+
 
     public String getNombreGalleta() {
         return nombreGalleta;
@@ -27,14 +27,6 @@ public class Dashboard {
 
     public void setNombreGalleta(String nombreGalleta) {
         this.nombreGalleta = nombreGalleta;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
     }
 
     public float getCantidadVendida() {
