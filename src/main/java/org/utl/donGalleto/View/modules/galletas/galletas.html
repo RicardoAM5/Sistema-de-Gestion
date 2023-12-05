@@ -1,226 +1,246 @@
 <div class="container-fluid" style="height: 100%">
-    <div class="row h-100">
-      <!-- Columna izquierda (tamaño 7 en pantallas grandes) -->
-      <div class="col-md-12 col-sm-12">
-        <!-- Contenido de la columna izquierda -->
-        <div
-          class=""
-          style="
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-          "
-        >
+  <div class="row h-100">
+    <!-- Columna izquierda (tamaño 7 en pantallas grandes) -->
+    <div class="col-md-12 col-sm-12">
+      <!-- Contenido de la columna izquierda -->
+      <div
+        class=""
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
         <p></p>
-          <h3>Lista de Galletas</h3>
-          <button class="btn btn-primary" data-bs-toggle='modal' data-bs-target='#addCookie'>Agregar</button>
-        </div>
-        <div
-          class="mb-4 mt-2"
-          style="
-            height: calc(100vh - 150px);
-            overflow: auto;
-            border: 2px solid var(--color2);
-          "
+        <h3>Lista de Galletas</h3>
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#addCookie"
         >
-          <!-- aqui va la tabla del ticket-->
-  
-          <table id="dataTable_ventas" class="table">
-            <thead>
-              <th>#</th>
-              <th>Imagen</th>
-              <th>Nombre</th>
-              <th>Precio Unitario</th>
-              <th>Precio Kilo</th>
-              <th>Descripción</th>
-              <th>Opciones</th>
-            </thead>
-            <tbody id="tableBody_ventas"></tbody>
-          </table>
-        </div>
-        
+          Agregar
+        </button>
       </div>
-      
+      <div
+        class="mb-4 mt-2"
+        style="
+          height: calc(100vh - 150px);
+          overflow: auto;
+          border: 2px solid var(--color2);
+        "
+      >
+        <!-- aqui va la tabla del ticket-->
+
+        <table id="dataTable_ventas" class="table">
+          <thead>
+            <th>#</th>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Precio Unitario</th>
+            <th>Precio Kilo</th>
+            <th>Descripción</th>
+            <th>Opciones</th>
+          </thead>
+          <tbody id="tableBody_ventas"></tbody>
+        </table>
+      </div>
     </div>
   </div>
-  
-  <!-- aqui van los formularios emergentes -->
-  
-  <!-- Modal -->
-  <div
-    class="modal fade"
-    id="addCookie"
-    data-bs-backdrop="static"
-    data-bs-keyboard="false"
-    tabindex="-1"
-    aria-labelledby="agregarProductoModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="agregarProductoModalLabel">
-            Agregar galleta
-          </h1>
+</div>
+
+<!-- aqui van los formularios emergentes -->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="addCookie"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="agregarProductoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="agregarProductoModalLabel">
+          Agregar galleta
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          class="p-3 mt-3 needs-validation valid-addcookie"
+          novalidate
+          id="agregarProductoForm"
+        >
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input
+              type="text"
+              class="form-control form-field"
+              
+              id="nombre"
+              placeholder="Ingrese el nombre"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="cantidad" class="form-label">Cantidad:</label>
+            <input
+              type="number"
+              class="form-control form-field"
+              id="cantidad"
+              placeholder="Ingrese la cantidad"
+              required
+            />
+          <div class="mb-3">
+            <label for="precio_unitario" class="form-label">Precio por pieza:</label>
+            <input
+              type="number"
+              class="form-control form-field"
+              id="precio_unitario"
+              placeholder="Ingrese el precio unitario"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="precio_kilo" class="form-label">Precio por Kilo:</label>
+            <input
+              type="number"
+              class="form-control form-field"
+              id="precio_kilo"
+              placeholder="Ingrese el precio por kilo"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción:</label>
+            <input
+              type="text"
+              class="form-control form-field"
+              id="descripcion"
+              placeholder="Ingrese la Descripción"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="imagen" class="form-label">Imagen:</label>
+            <input
+              type="file"
+              class="form-control form-field"
+              id="imagen"
+              placeholder="Ingrese la imagen"
+              required
+            />
+          </div>
           <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <form id="agregarProductoForm">
-            
-            <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="nombre"
-                placeholder="Ingrese el nombre"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="cantidad" class="form-label">Precio por pieza:</label>
-              <input
-                type="number"
-                class="form-control"
-                id="cantidad"
-                placeholder="Ingrese la cantidad"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="cantidad" class="form-label">Precio por Kilo:</label>
-              <input
-                type="number"
-                class="form-control"
-                id="cantidad"
-                placeholder="Ingrese la cantidad"
-              />
-            </div>
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Descripción:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  placeholder="Ingrese el nombre"
-                />
-              </div>
-            <div class="mb-3">
-              <label for="cantidad" class="form-label">Imagen:</label>
-              <input
-                type="file"
-                class="form-control"
-                id="imagen"
-                placeholder="Ingrese la imagen"
-              />
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Cancelar
-          </button>
-          <button
-            type="button"
             class="btn btn-primary"
-            onclick="agregarProducto()"
+            type="submit"
           >
             Agregar
           </button>
-        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
       </div>
     </div>
   </div>
-  <!-- Modal -->
-  <!-- editar galleta -->
-  <div
-    class="modal fade"
-    id="addCookie"
-    data-bs-backdrop="static"
-    data-bs-keyboard="false"
-    tabindex="-1"
-    aria-labelledby="agregarProductoModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="agregarProductoModalLabel">
-            Editar galleta
-          </h1>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <form id="agregarProductoForm">
-            
-            <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="nombre"
-                placeholder="Ingrese el nombre"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="cantidad" class="form-label">Precio por pieza:</label>
-              <input
-                type="number"
-                class="form-control"
-                id="cantidad"
-                placeholder="Ingrese la cantidad"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="cantidad" class="form-label">Precio por Kilo:</label>
-              <input
-                type="number"
-                class="form-control"
-                id="cantidad"
-                placeholder="Ingrese la cantidad"
-              />
-            </div>
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Descripción:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  placeholder="Ingrese el nombre"
-                />
-              </div>
-            <div class="mb-3">
-              <label for="cantidad" class="form-label">Imagen:</label>
-              <input
-                type="file"
-                class="form-control"
-                id="imagen"
-                placeholder="Ingrese la imagen"
-              />
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Cancelar
-          </button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            onclick="editarProducto()"
-          >
-            Editar
-          </button>
-        </div>
+</div>
+<!-- Modal -->
+<!-- editar galleta -->
+<div
+  class="modal fade"
+  id="updateCookie"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="agregarProductoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="agregarProductoModalLabel">
+          Editar galleta
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="agregarProductoForm">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              placeholder="Ingrese el nombre"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="cantidad" class="form-label">Precio por pieza:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="cantidad"
+              placeholder="Ingrese la cantidad"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="cantidad" class="form-label">Precio por Kilo:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="cantidad"
+              placeholder="Ingrese la cantidad"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Descripción:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              placeholder="Ingrese el nombre"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="cantidad" class="form-label">Imagen:</label>
+            <input
+              type="file"
+              class="form-control"
+              id="imagen"
+              placeholder="Ingrese la imagen"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="editarGalletaCommit()"
+        >
+          Editar
+        </button>
       </div>
     </div>
   </div>
+</div>

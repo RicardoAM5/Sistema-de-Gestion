@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Verificar si el token está presente para determinar si se ha iniciado sesión
     if (!token) {
-		/* window.location.href = "./modules/login/login.html"; */
+		 window.location.href = "./modules/login/login.html";
     }
 });
 

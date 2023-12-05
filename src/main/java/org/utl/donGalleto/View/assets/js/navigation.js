@@ -14,6 +14,16 @@ window.cargarModuloGalletas = function cargarModuloGalletas() {
       nuevoEnlace.rel = "stylesheet";
       nuevoEnlace.href = rutaStylesCSS;
       document.head.appendChild(nuevoEnlace);
+
+        fetch("./modules/galletas/scripts.js")
+            .then((response) => response.text())
+            .then((data) => {
+                const script = document.createElement("script");
+                script.textContent = data;
+                script.type="module"
+                document.body.appendChild(script);
+            })
+            .catch((error) => console.error("Error al cargar el script:", error));
     })
     .catch((error) => console.error("Error al cargar la página:", error));
 }
@@ -112,5 +122,5 @@ window.cargarModuloVentas = function cargarModuloVentas() {
 window.cerrarSesion = function cerrarSesion() {
   localStorage.clear();
 
-  window.location.href = "/modules/login/login.html";
+  window.location.href = "./modules/login/login.html";
 }
