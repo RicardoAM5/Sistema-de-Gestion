@@ -129,7 +129,6 @@ $(document).ready(function () {
     $.ajax({
         url : "http://localhost:8080/api/inventario/getAll",
         type : "GET",
-        data:{"filtro": filtro},
         success : function(resp) {
             console.log(resp);
             var nombres = [];
