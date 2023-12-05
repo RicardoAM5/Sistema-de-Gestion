@@ -54,10 +54,10 @@ function render_grafico(nombres, valores){
     graficoGalletas = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Chispas de chocolate', 'Orejas', 'Orejas con chocolate', 'Nuez', 'Arandanos', 'Polvorones de naranja'],
+            labels: nombres,
             datasets: [{
                 label: 'Galletas Vendidas',
-                data: [12, 19, 3, 5, 2, 3],
+                data: valores,
                 backgroundColor: [
                     'rgba(255, 159, 64, 0.2)'
                   ],
