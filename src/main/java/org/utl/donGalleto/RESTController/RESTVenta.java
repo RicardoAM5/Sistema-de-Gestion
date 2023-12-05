@@ -1,11 +1,14 @@
 package org.utl.donGalleto.RESTController;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.utl.donGalleto.AppService.VentaAppService;
 import org.utl.donGalleto.Model.Venta;
 
+import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,13 +21,19 @@ public class RESTVenta {
 
     private final VentaAppService ventaAppService;
 
+
     public RESTVenta(VentaAppService ventaAppService) {
         this.ventaAppService = ventaAppService;
     }
 
 
     @PostMapping("/save")
-    public ResponseEntity<?> insertarVenta( @RequestBody  Venta v) {
+    public ResponseEntity<?> insertarVenta(@RequestParam String cantidad, @RequestParam String total, @RequestParam String idGalleta) {
+        Venta v  = new Venta();
+        v.setCantidad(Float.parseFloat(cantidad));
+        v.setTotal(total);
+        v.setIdGalleta(Long.parseLong(idGalleta));
+        v.setFecha(Date.valueOf("2023-12-12"));
         try {
             ventaAppService.insertarVenta(v);
             return ResponseEntity.ok(v);

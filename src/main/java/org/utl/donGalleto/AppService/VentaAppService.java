@@ -20,11 +20,11 @@ public class VentaAppService {
     }
 
     public void insertarVenta(Venta v)throws Exception{
-        ventaCQRS.insertarVenta(v);
+        ventaDAO.insertarVenta(v);
     }
 
     public void actualizarVenta(Venta v)throws Exception{
-        ventaCQRS.actualizarVenta(v);
+        ventaDAO.actualizrVenta(v);
     }
 
     public List<Venta> getAllVenta(){

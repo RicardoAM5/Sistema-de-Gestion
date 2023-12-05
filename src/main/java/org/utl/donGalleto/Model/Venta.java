@@ -3,7 +3,7 @@ package org.utl.donGalleto.Model;
 import jakarta.persistence.*;
 
 import java.sql.Date;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "venta")
