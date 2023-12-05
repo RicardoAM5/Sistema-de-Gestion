@@ -22,7 +22,7 @@ function agregarGalleta() {
     const imagenBase64 = reader.result.split(",")[1]; // Obtener el contenido en base64
 
     // Construir el objeto JSON
-    const galletaObj = {
+    const params = {
       "nombre": nombre,
       "cantidad": cantidad,
       "precioUnitario": precioUnitario,
@@ -30,21 +30,20 @@ function agregarGalleta() {
       "descripcion": descripcion,
       "imagenBase64": imagenBase64,
     };
-
     // Hacer la solicitud Fetch
     fetch("http://localhost:8080/api/galleta/save", {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(galletaObj),
+      body: JSON.stringify(params),
     })
       .then((response) => response.json())
       .then((data) => {
         // Lógica para manejar la respuesta del servidor
         console.log("Respuesta del servidor:", data);
-        alert("se agregó la galleta");
-        location.reload();
+        //alert("se agregó la galleta");
+        console.log(params)
         // // Cerrar el modal si es necesario
         // const modal = new bootstrap.Modal(document.getElementById("addCookie"));
         // modal.hide();

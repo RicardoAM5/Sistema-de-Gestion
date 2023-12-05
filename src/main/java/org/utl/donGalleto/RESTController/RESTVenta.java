@@ -24,7 +24,7 @@ public class RESTVenta {
 
 
     @PostMapping("/save")
-    public ResponseEntity<?> insertarVenta(Venta v) {
+    public ResponseEntity<?> insertarVenta( @RequestBody  Venta v) {
         try {
             ventaAppService.insertarVenta(v);
             return ResponseEntity.ok(v);
