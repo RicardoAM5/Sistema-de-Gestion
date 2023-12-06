@@ -96,6 +96,16 @@ window.cargarModuloInventario = function cargarModuloInventario() {
       nuevoEnlace.rel = "stylesheet";
       nuevoEnlace.href = rutaStylesCSS;
       document.head.appendChild(nuevoEnlace);
+
+      fetch("./modules/inventario/scripts.js")
+            .then((response) => response.text())
+            .then((data) => {
+                const script = document.createElement("script");
+                script.textContent = data;
+                script.type="module"
+                document.body.appendChild(script);
+            })
+            .catch((error) => console.error("Error al cargar el script:", error));
     })
     .catch((error) => console.error("Error al cargar la página:", error));
 }
@@ -115,6 +125,16 @@ window.cargarModuloVentas = function cargarModuloVentas() {
       nuevoEnlace.rel = "stylesheet";
       nuevoEnlace.href = rutaStylesCSS;
       document.head.appendChild(nuevoEnlace);
+
+      fetch("./modules/ventas/scripts.js")
+            .then((response) => response.text())
+            .then((data) => {
+                const script = document.createElement("script");
+                script.textContent = data;
+                script.type="module"
+                document.body.appendChild(script);
+            })
+            .catch((error) => console.error("Error al cargar el script:", error));
     })
     .catch((error) => console.error("Error al cargar la página:", error));
 }

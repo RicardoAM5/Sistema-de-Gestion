@@ -35,7 +35,7 @@ const listaGalletas_ventas = async ()=>{
           </div>
             `;
         });
-        lista_galletas.innerHTML=content
+        lista_galletas_ventas.innerHTML=content
 
     } catch (error) {
         console.log(error)
