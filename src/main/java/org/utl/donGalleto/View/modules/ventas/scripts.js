@@ -1,4 +1,9 @@
-import { galletasApiUrl,ventasApiUrl } from "../../modules/apiUrls.js"
+import {
+  galletasApiUrl,
+  galletasUpdateApiUrl,
+  galletasDeleteApiUrl,
+  galletasInsertApiUrl,
+} from "./modules/apiUrls.js";
 
 function mostrarDetalles(nombre, precioUnitario, precioKilo, imagenBase64, descripcion) {
     // Puedes realizar acciones con los datos de la galleta, por ejemplo, mostrar en una ventana modal
