@@ -74,6 +74,8 @@
           aria-label="Close"
         ></button>
       </div>
+      <p style="display: none;" id="id"></p>
+      <p style="display: none;" id="imagen-previa"></p>
       <div class="modal-body">
         <form
           class="p-3 mt-3 needs-validation valid-addcookie"
@@ -149,28 +151,29 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button type="button" id="btn_agregar_galleta" class="btn btn-secondary" data-bs-dismiss="modal">
           Cancelar
         </button>
       </div>
     </div>
   </div>
 </div>
+
 <!-- Modal -->
 <!-- editar galleta -->
 <div
   class="modal fade"
-  id="updateCookie"
+  id="editCookie"
   data-bs-backdrop="static"
   data-bs-keyboard="false"
   tabindex="-1"
-  aria-labelledby="agregarProductoModalLabel"
+  aria-labelledby="editarProductoModalLabel"
   aria-hidden="true"
 >
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="agregarProductoModalLabel">
+        <h1 class="modal-title fs-5" id="editarProductoModalLabel">
           Editar galleta
         </h1>
         <button
@@ -181,64 +184,98 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form id="agregarProductoForm">
+        <form
+          class="p-3 mt-3 needs-validation valid-editcookie"
+          novalidate
+          id="editarProductoForm"
+        >
           <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre:</label>
+            <label for="nombre-editar" class="form-label">Nombre:</label>
             <input
               type="text"
-              class="form-control"
-              id="nombre"
+              class="form-control form-field"
+              
+              id="nombre-editar"
               placeholder="Ingrese el nombre"
+              required
             />
           </div>
-          <div class="mb-3">
-            <label for="cantidad" class="form-label">Precio por pieza:</label>
+          <div class="mb-3" style="display: none;">
+            <label for="cantidad-editar" class="form-label">Cantidad:</label>
             <input
               type="number"
-              class="form-control"
-              id="cantidad"
-              placeholder="Ingrese la cantidad"
+              class="form-control form-field"
+              id="cantidad-editar"
+              
             />
-          </div>
-          <div class="mb-3">
-            <label for="cantidad" class="form-label">Precio por Kilo:</label>
+          <div class="mb-3" style="display: none;">
+            <label for="id-editar" class="form-label">id:</label>
             <input
               type="number"
-              class="form-control"
-              id="cantidad"
-              placeholder="Ingrese la cantidad"
+              class="form-control form-field"
+              id="id-editar"
+              
+              
+            />
+          <div class="mb-3">
+            <label for="precio_unitario-editar" class="form-label">Precio por pieza:</label>
+            <input
+              type="number"
+              class="form-control form-field"
+              id="precio_unitario-editar"
+              placeholder="Ingrese el precio unitario"
+              required
             />
           </div>
           <div class="mb-3">
-            <label for="nombre" class="form-label">Descripción:</label>
+            <label for="precio_kilo-editar" class="form-label">Precio por Kilo:</label>
+            <input
+              type="number"
+              class="form-control form-field"
+              id="precio_kilo-editar"
+              placeholder="Ingrese el precio por kilo"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="descripcion-editar" class="form-label">Descripción:</label>
             <input
               type="text"
-              class="form-control"
-              id="nombre"
-              placeholder="Ingrese el nombre"
+              class="form-control form-field"
+              id="descripcion-editar"
+              placeholder="Ingrese la Descripción"
+              required
             />
           </div>
           <div class="mb-3">
-            <label for="cantidad" class="form-label">Imagen:</label>
+            <h4>Imagen previa:</h4>
+            <img
+                src=""
+                class=""
+                id="imagen-previa-editar"
+                style="max-width: 100px; max-height:100px"
+                alt="Imagen de la galleta"
+            />
+            <label for="imagen-editar" class="form-label">Cargar nueva magen:</label>
             <input
               type="file"
-              class="form-control"
-              id="imagen"
+              class="form-control form-field"
+              id="imagen-editar"
               placeholder="Ingrese la imagen"
+              
             />
           </div>
+          <button
+            class="btn btn-primary"
+            type="submit"
+          >
+            Editar
+          </button>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Cancelar
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="editarGalletaCommit()"
-        >
-          Editar
         </button>
       </div>
     </div>

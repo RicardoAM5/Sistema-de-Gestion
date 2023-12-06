@@ -13,7 +13,7 @@
           "
         >
         <p></p>
-          <h3>Lista de materia prima</h3>
+          <h3>Inventario de galletas</h3>
           <button class="btn btn-primary" data-bs-toggle='modal' data-bs-target='#addMaterial'>Agregar</button>
         </div>
         <div
@@ -26,14 +26,14 @@
         >
           <!-- aqui va la tabla del ticket-->
   
-          <table id="dataTable_ventas" class="table">
+          <table id="dataTable_inventario" class="table">
             <thead>
               <th>#</th>
               <th>Nombre</th>
               <th>Cantidad</th>
               <th>Opciones</th>
             </thead>
-            <tbody id="tableBody_ventas"></tbody>
+            <tbody id="tableBody_inventario"></tbody>
           </table>
         </div>
         
@@ -58,7 +58,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="agregarProductoModalLabel">
-            Agregar Materia prime
+            Actualizar cantidad
           </h1>
           <button
             type="button"
@@ -97,7 +97,7 @@
           <button
             type="button"
             class="btn btn-primary"
-            onclick="agregarProducto()"
+            onclick="editInventario()"
           >
             Agregar
           </button>
