@@ -24,7 +24,7 @@ public class RESTUsuario {
 
 
     @PostMapping("/save")
-    public ResponseEntity<?> insertarUsuario(Usuario u) {
+    public ResponseEntity<?> insertarUsuario(@RequestBody Usuario u) {
         try {
             usuarioAppService.insertarUsuario(u);
             return ResponseEntity.ok(u);
@@ -50,7 +50,7 @@ public class RESTUsuario {
     }
 
     @GetMapping("/login")
-    public ResponseEntity<?> buscarUsuario(String usuario, String contrasenia) throws Exception {
+    public ResponseEntity<?> buscarUsuario(@RequestParam String usuario,@RequestParam String contrasenia) throws Exception {
         try {
            Usuario usr = usuarioAppService.buscarUsuario(usuario, contrasenia);
             return ResponseEntity.ok(usr) ;
@@ -65,8 +65,8 @@ public class RESTUsuario {
 
 
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<?> eliminarUsuario(long idUsuario) {
+    @DeleteMapping("/delete/{idUsuario}")
+    public ResponseEntity<?> eliminarUsuario(@PathVariable long idUsuario) {
         try {
             usuarioAppService.eliminarUsuario(idUsuario);
             Map<String, String> response = new HashMap<>();
@@ -80,7 +80,7 @@ public class RESTUsuario {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<?> actualizarUsuario(Usuario u) {
+    public ResponseEntity<?> actualizarUsuario( @RequestBody Usuario u) {
         try {
             usuarioAppService.actualizarUsuario(u);
             return ResponseEntity.ok(u);

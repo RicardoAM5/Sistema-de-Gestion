@@ -25,7 +25,7 @@ public class RESTMateriaPrima {
 
 
     @PostMapping("/save")
-    public ResponseEntity<?> insertarMateriaPrima(MateriaPrima mp) {
+    public ResponseEntity<?> insertarMateriaPrima(@RequestBody  MateriaPrima mp) {
         try {
             materiaPrimaAppService.insertarMateriaPrima(mp);
             return ResponseEntity.ok(mp);
@@ -50,8 +50,8 @@ public class RESTMateriaPrima {
         }
     }
 
-    @GetMapping("/get")
-    public ResponseEntity<?> buscarMateriaPrima(long idMateriaPrima) {
+    @GetMapping("/get/{idMateriaPrima}")
+    public ResponseEntity<?> buscarMateriaPrima(@PathVariable long idMateriaPrima) {
         try {
             Optional<MateriaPrima> mp = materiaPrimaAppService.buscarMateriaPrima(idMateriaPrima);
             if (mp.isPresent()) {
@@ -70,8 +70,8 @@ public class RESTMateriaPrima {
         }
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<?> eliminarMateriaPrima(long idMateriaPrima) {
+    @DeleteMapping("/delete/{idMateriaPrima}")
+    public ResponseEntity<?> eliminarMateriaPrima(@PathVariable long idMateriaPrima) {
         try {
             materiaPrimaAppService.eliminarMateriaPrima(idMateriaPrima);
             Map<String, String> response = new HashMap<>();
@@ -84,7 +84,7 @@ public class RESTMateriaPrima {
         }
     }
     @PutMapping("/update")
-    public ResponseEntity<?> actualizarMateriaPrima(MateriaPrima mp) {
+    public ResponseEntity<?> actualizarMateriaPrima(@RequestBody MateriaPrima mp) {
         try {
             materiaPrimaAppService.actualizarMateriaPrima(mp);
             return ResponseEntity.ok(mp);

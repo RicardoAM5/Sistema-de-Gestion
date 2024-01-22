@@ -58,8 +58,8 @@ public class RESTVenta {
         }
     }
 
-    @GetMapping("/get")
-    public ResponseEntity<?> buscarVenta(long idVenta) {
+    @GetMapping("/get/{idVenta}")
+    public ResponseEntity<?> buscarVenta(@PathVariable long idVenta) {
         try {
             Optional<Venta> v = ventaAppService.buscarVenta(idVenta);
             if (v.isPresent()) {
@@ -78,8 +78,8 @@ public class RESTVenta {
         }
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<?> eliminarVenta(long idVenta) {
+    @DeleteMapping("/delete/{idVenta}")
+    public ResponseEntity<?> eliminarVenta(@PathVariable long idVenta) {
         try {
             ventaAppService.eliminarVenta(idVenta);
             Map<String, String> response = new HashMap<>();
@@ -92,7 +92,7 @@ public class RESTVenta {
         }
     }
     @PutMapping("/update")
-    public ResponseEntity<?> actualizarVenta(Venta v) {
+    public ResponseEntity<?> actualizarVenta(@RequestBody Venta v) {
         try {
             ventaAppService.actualizarVenta(v);
             return ResponseEntity.ok(v);

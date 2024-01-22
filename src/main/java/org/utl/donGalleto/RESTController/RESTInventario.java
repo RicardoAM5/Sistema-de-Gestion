@@ -36,7 +36,7 @@ public class RESTInventario {
 
 
     @PutMapping("/updateInventario")
-    public ResponseEntity<?> actualizarCantidadGalleta(String nombre, String cantidad) {
+    public ResponseEntity<?> actualizarCantidadGalleta(@RequestParam String nombre, @RequestParam String cantidad) {
         try {
             Map<String, String> response = new HashMap<>();
             response.put("correcto", "datos actualizados");

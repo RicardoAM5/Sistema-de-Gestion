@@ -1,5 +1,6 @@
 package org.utl.donGalleto.RESTController;
 
+import ch.qos.logback.core.model.processor.PhaseIndicator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -49,8 +50,8 @@ public class RESTGalleta {
         }
     }
 
-    @GetMapping("/get")
-    public ResponseEntity<?> getGalleta(long idGalleta) {
+    @GetMapping("/get/{idGalleta}")
+    public ResponseEntity<?> getGalleta(@PathVariable  long idGalleta) {
         try {
             Optional<Galleta> g = galletaAppService.buscarGalleta(idGalleta);
             if (g.isPresent()) {
@@ -69,8 +70,8 @@ public class RESTGalleta {
         }
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<?> eliminarGalleta(long idGalleta) {
+    @DeleteMapping("/delete/{idGalleta}")
+    public ResponseEntity<?> eliminarGalleta(@PathVariable long idGalleta) {
         try {
             galletaAppService.eliminarGalleta(idGalleta);
             Map<String, String> response = new HashMap<>();

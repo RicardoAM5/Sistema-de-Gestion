@@ -73,3 +73,29 @@ import {
       );
     });
   })();
+
+
+async function editarInventario() {
+    try {
+        const response = await fetch("`http://localhost:8080/api/venta/updateInventario?nombre=${cantidad}&cantidad=${total}`", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+        if (!response.ok) {
+            console.log(response.text());
+            throw new Error("Error in HTTP: " + response.status);
+        }
+        const data = await response.json();
+
+        if (data.error) {
+            console.log(data.error)
+        } else {
+            console.log(data)
+        }
+    } catch (error) {
+        console.error("Error in response:", error);
+    }
+
+}
